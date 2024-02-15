@@ -671,75 +671,57 @@
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////
               START SECTION 8 - GET STARTED  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $first_name = $_POST["first_name"];
-    $last_name = $_POST["last_name"];
-    $email = $_POST["email"];
-    $message = $_POST["message"];
-
-    $to = "mecdaddy09@gmail.com"; // Remplacez avec votre adresse email
-    $subject = "Nouveau message de contact";
-    $message_content = "Nom: $first_name $last_name\nEmail: $email\nMessage:\n$message";
-
-    mail($to, $subject, $message_content);
-
-    // Vous pouvez également rediriger l'utilisateur vers une page de confirmation
-    header("Location: confirmation.html");
-}
-?>
-
 <section id="contact" class="get-started">
   <div class="container">
-    <div class="row text-center">
-      <h1 class="display-3 fw-bold text-capitalize">CONTACT</h1>
-      <div class="heading-line pb-5"></div>
-      <br>
-    </div>
+      <div class="row text-center">
+          <h1 class="display-3 fw-bold text-capitalize">CONTACT</h1>
+          <div class="heading-line pb-5"></div>
+          <br>
+      </div>
 
-    <!-- START THE CTA CONTENT  -->
-    <div class="row text-white">
-      <div class="col-12 col-lg-6 gradient shadow p-3">
-        <div class="cta-info w-100">
-          <h4 class="display-5 fw-bold">Votre satisfaction est notre priorité absolue :</h4>
-          <p class="lh-lg">
-            "Votre travail va remplir une grande partie de votre vie, et la seule façon d'être vraiment satisfait est de faire ce que 
-            vous croyez être un travail formidable. Et la seule façon de faire un travail formidable est d'aimer ce que vous faites" - Steve Jobs
-          </p>
-          <h3 class="display-3--brief">Quelle sera la prochaine étape?</h3>
-          <ul class="cta-info__list">
-            <li>Nous préparerons la proposition.</li>
-            <li>Nous en discuterons ensemble.</li>
-            <li>Commencer la discussion.</li>
-          </ul>
-        </div>
+      <!-- START THE CTA CONTENT -->
+      <div class="row text-white">
+          <div class="col-12 col-lg-6 gradient shadow p-3">
+              <div class="cta-info w-100">
+                  <h4 class="display-5 fw-bold">Votre satisfaction est notre priorité absolue :</h4>
+                  <p class="lh-lg">
+                      "Votre travail va remplir une grande partie de votre vie, et la seule façon d'être vraiment satisfait est de faire ce que 
+                      vous croyez être un travail formidable. Et la seule façon de faire un travail formidable est d'aimer ce que vous faites" - Steve Jobs
+                  </p>
+                  <h3 class="display-3--brief">Quelle sera la prochaine étape?</h3>
+                  <ul class="cta-info__list">
+                      <li>Nous préparerons la proposition.</li>
+                      <li>Nous en discuterons ensemble.</li>
+                      <li>Commencer la discussion.</li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-12 col-lg-6 bg-white shadow p-3">
+              <div class="form w-100 pb-2">
+                  <h4 class="display-3--title mb-5">Contactez-moi</h4>
+                  <form action="process_contact.php" method="post" class="row">
+                      <div class="col-lg-6 col-md mb-3">
+                          <input type="text" name="first_name" placeholder="First Name" id="inputFirstName" class="shadow form-control form-control-lg">
+                      </div>
+                      <div class="col-lg-6 col-md mb-3">
+                          <input type="text" name="last_name" placeholder="Last Name" id="inputLastName" class="shadow form-control form-control-lg">
+                      </div>
+                      <div class="col-lg-12 mb-3">
+                          <input type="email" name="email" placeholder="Email Address" id="inputEmail" class="shadow form-control form-control-lg">
+                      </div>
+                      <div class="col-lg-12 mb-3">
+                          <textarea name="message" placeholder="Message" id="message" rows="8" class="shadow form-control form-control-lg"></textarea>
+                      </div>
+                      <div class="text-center d-grid mt-1">
+                          <button type="submit" class="btn btn-primary rounded-pill pt-3 pb-3">
+                              Submit
+                              <i class="fas fa-paper-plane"></i>
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
       </div>
-      <div class="col-12 col-lg-6 bg-white shadow p-3">
-        <div class="form w-100 pb-2">
-          <h4 class="display-3--title mb-5">Contactez-moi</h4>
-          <form action="#" method="post" class="row">
-            <div class="col-lg-6 col-md mb-3">
-              <input type="text" name="first_name" placeholder="First Name" id="inputFirstName" class="shadow form-control form-control-lg">
-            </div>
-            <div class="col-lg-6 col-md mb-3">
-              <input type="text" name="last_name" placeholder="Last Name" id="inputLastName" class="shadow form-control form-control-lg">
-            </div>
-            <div class="col-lg-12 mb-3">
-              <input type="email" name="email" placeholder="Email Address" id="inputEmail" class="shadow form-control form-control-lg">
-            </div>
-            <div class="col-lg-12 mb-3">
-              <textarea name="message" placeholder="Message" id="message" rows="8" class="shadow form-control form-control-lg"></textarea>
-            </div>
-            <div class="text-center d-grid mt-1">
-              <button type="submit" class="btn btn-primary rounded-pill pt-3 pb-3">
-                Submit
-                <i class="fas fa-paper-plane"></i>
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
